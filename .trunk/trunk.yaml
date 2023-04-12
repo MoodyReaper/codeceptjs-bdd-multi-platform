@@ -1,0 +1,41 @@
+version: 0.1
+cli:
+  version: 1.7.0
+  sha256:
+    darwin_arm64: daf1d464b8047702f22f3d8014d037756201750286e61e1abc9b1c0ff2315909
+    darwin_x86_64: 9daae90a68fe890f21bf08193d1a24825f3f32dd35725a75ea87c2308cbfe8bd
+    linux_x86_64: ce26855ef4ce054f89f840ade38f024dd81767b9d24cc31b8a39e5f0e575a018
+plugins:
+  sources:
+    - id: trunk
+      ref: v0.0.15
+      uri: https://github.com/trunk-io/plugins
+lint:
+  enabled:
+    - actionlint@1.6.24
+    - git-diff-check
+    - gitleaks@8.16.2
+    - markdownlint@0.33.0
+    - prettier@2.8.7
+    - yamllint@1.30.0
+    - cspell@6.31.1
+    - dotenv-linter@3.3.0
+    - hadolint@2.12.0
+    - eslint@8.38.0
+    - sort-package-json@2.4.1
+runtimes:
+  enabled:
+    - go@1.19.5
+    - node@18.12.1
+    - python@3.10.8
+actions:
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available
+    - commitlint
+merge:
+  required_statuses:
+    - Trunk Check
+    - Run Tests

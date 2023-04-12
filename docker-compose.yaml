@@ -1,0 +1,28 @@
+# TODO: check and finish
+
+version: '3.9'
+
+name: codeceptjs-bdd-multi-platform
+
+services:
+  tests:
+    # command: npm run test
+    container_name: codeceptjs-bdd-multi-platform-tests
+    depends_on:
+      - appium
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    networks:
+      - codeceptjs-bdd-multi-platform
+  appium:
+    container_name: codeceptjs-bdd-multi-platform-appium
+    image: appium/appium:v2.0.b57-p1c@sha256:deb3fa4f7c890cf8382daeb9bf014fcda86fa774311151e3732693fc10af8747
+    networks:
+      - codeceptjs-bdd-multi-platform
+
+networks:
+  codeceptjs-bdd-multi-platform:
+    driver: bridge

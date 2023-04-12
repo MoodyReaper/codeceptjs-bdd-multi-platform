@@ -1,0 +1,68 @@
+# Example workflow for checking PRs and commits
+
+name: Pull Request or Push to master
+
+on:
+  pull_request: {}
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  trunk_check:
+    name: Trunk Check
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write # For Trunk to post annotations
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
+      - name: Setup NodeJS
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: 18.15.0
+      - name: Install package dependencies
+        run: npm ci
+      - name: Generate types
+        run: npm run codecept:types
+        env:
+          TESTS_MOBILE_COMMON_LAUNCH_TYPE: ${{ vars.TESTS_MOBILE_COMMON_LAUNCH_TYPE }}
+          TESTS_MOBILE_COMMON_USER_PASSWORD: ${{ secrets.TESTS_MOBILE_COMMON_USER_PASSWORD }}
+          TESTS_MOBILE_COMMON_USER_USERNAME: ${{ secrets.TESTS_MOBILE_COMMON_USER_USERNAME }}
+          TESTS_MOBILE_LOCAL_APP_PATH: ${{ vars.TESTS_MOBILE_LOCAL_APP_PATH }}
+          TESTS_MOBILE_LOCAL_PLATFORM: ${{ vars.TESTS_MOBILE_LOCAL_PLATFORM }}
+          TESTS_MOBILE_LOCAL_DEVICE: ${{ vars.TESTS_MOBILE_LOCAL_DEVICE }}
+      - name: Trunk Check
+        uses: trunk-io/trunk-action@4f077db8a20117a021b787adbf62729ae143c19e # v1.0.8
+
+  run_tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
+      - name: Setup NodeJS
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: 18.15.0
+      - name: Install package dependencies
+        run: npm ci --production
+      # - name: Run all tests
+      #   run: npm run test
+      # - name: Run backend tests
+      #   run: npm run test:api
+      # - name: Run infrastructure tests
+      #   run: npm run test:infra
+      # - name: Run mobile tests
+      #   run: npm run test:mobile
+      - name: Run web tests
+        run: npm run test:web

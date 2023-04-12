@@ -1,0 +1,17 @@
+{
+  "cucumber.features": ["**/bdd/features/**/*.feature"],
+  "cucumber.glue": ["**/bdd/steps/**/*.ts"],
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.telemetry.enabled": false,
+  "liveshare.guestApprovalRequired": true,
+  "redhat.telemetry.enabled": false
+  // Recommendations:
+  // "editor.defaultFormatter": "trunk.io",
+  // "editor.formatOnSave": true,
+  // "git.enableCommitSigning": true,
+  // "terminal.integrated.scrollback": 10000
+  // Can not be set on a project level (set in user settings file):
+  // "telemetry.telemetryLevel": "off"
+}
