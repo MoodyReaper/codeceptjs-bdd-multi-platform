@@ -1,3 +1,4 @@
+# Minimal yamllint config with no formatting rules enabled (prettier handles those)
 rules:
   quoted-strings:
     required: only-when-needed

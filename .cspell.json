@@ -3,11 +3,11 @@
   "version": "0.2",
   "dictionaryDefinitions": [
     {
-      "name": "project-words",
-      "path": "./.cspell-project-words.txt",
+      "name": "project-dict",
+      "path": "./.cspell-dict.txt",
       "addWords": true
     }
   ],
-  "dictionaries": ["project-words"],
-  "ignorePaths": ["node_modules", "*.excalidraw", "./.cspell-project-words.txt"]
+  "dictionaries": ["project-dict"],
+  "ignorePaths": ["./.cspell-dict.txt", "*.excalidraw"]
 }
