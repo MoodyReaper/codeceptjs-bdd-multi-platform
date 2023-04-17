@@ -14,6 +14,10 @@ class ExampleComponent implements WebComponent {
     },
   };
 
+  constructor(exampleText?: string) {
+    if (exampleText !== undefined) this.elements.example.text = exampleText;
+  }
+
   async validateComponentContent(): Promise<void> {
     await within(this.root.locator, () => {
       I.waitForVisible(this.elements.example.locator);
@@ -22,4 +26,4 @@ class ExampleComponent implements WebComponent {
   }
 }
 
-export = new ExampleComponent();
+export = ExampleComponent;

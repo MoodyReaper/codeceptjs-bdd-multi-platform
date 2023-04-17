@@ -43,7 +43,7 @@ export const config: CodeceptJS.MainConfig = {
       getPageTimeout: 10000,
       show: true,
       trace: true,
-      url: 'http://localhost:3000',
+      url: 'http://localhost:3000', // It can not be simply replaced in case of two platforms with different URLs
       video: true,
       waitForAction: 100,
       waitForNavigation: 'load',
@@ -100,8 +100,7 @@ export const config: CodeceptJS.MainConfig = {
   },
   include: {
     I: '../steps.web',
-    exampleComponent: '../components/example.component',
-    examplePage: '../pages/example.page',
+    ExamplePage: '../pages/example.page',
   },
   name: 'codeceptjs-web-tests',
 };

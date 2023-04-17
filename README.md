@@ -306,8 +306,10 @@ Use `pause()` function in tests ([read here](https://codecept.io/basics/#pause))
 - Write tests for some example project
 - Add code coverage reporting
 - Add visual regression testing
+- Add performance testing
 - Add schema validation for API tests (`swagger-typescript-api`)
 - Add `Appium` server via Docker ([reference](https://github.com/appium/appium-docker-android))
 - Add emulated devices via Docker ([reference](https://github.com/budtmo/docker-android))
 - Add parallel tests execution (`run-workers`, `run-multiple`)
+- Complete `Dockerfile` and `Docker Compose` configs
 - Make common configuration and merge platform-specific sub-configs
