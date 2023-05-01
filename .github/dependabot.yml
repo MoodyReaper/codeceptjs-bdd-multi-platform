@@ -1,0 +1,29 @@
+version: 2
+
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+
+  # Maintain dependencies for Docker
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    ignore:
+      - dependency-name: node
+        update-types: [version-update:semver-major]
+    open-pull-requests-limit: 5
+
+  # Maintain dependencies for npm
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
