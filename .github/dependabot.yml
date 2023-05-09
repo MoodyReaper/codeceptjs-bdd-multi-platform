@@ -15,9 +15,6 @@ updates:
     schedule:
       interval: weekly
       day: monday
-    ignore:
-      - dependency-name: node
-        update-types: [version-update:semver-major]
     open-pull-requests-limit: 5
 
   # Maintain dependencies for npm
