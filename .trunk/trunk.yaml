@@ -8,7 +8,7 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.16
+      ref: v0.0.17
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
@@ -19,8 +19,10 @@ lint:
     - prettier@2.8.8
     - yamllint@1.31.0
     - cspell@6.31.1
+    - semgrep@1.21.0
     - dotenv-linter@3.3.0
     - hadolint@2.12.0
+    - checkov@2.3.238
     - eslint@8.40.0
     - sort-package-json@2.4.1
 runtimes:
