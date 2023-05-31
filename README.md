@@ -20,13 +20,16 @@ CodeceptJS opinionated setup with BDD tests for multiple platforms:
 
 1. Clone repository with `git` and `cd` into cloned repo
 2. Install development / system dependencies _(read below)_
-3. Install package dependencies: `npm install`
-4. Set environment variables _(read below)_
-5. Launch tests:
+3. Set environment variables _(read below)_
+4. Launch:
    - With `Docker Compose`:
      - `docker-compose up` _(**TODO** - not finished at the moment)_
    - Without `Docker Compose`:
-     - `npm run test` _(or other commands - read below)_
+     - Switch to required `NodeJS` version:
+       - `nvm install` _(if not installed)_
+       - `nvm use`
+     - Install packages: `npm install`
+     - Run tests: `npm run test` _(or other commands - read below)_
 
 ## Development / System dependencies
 
