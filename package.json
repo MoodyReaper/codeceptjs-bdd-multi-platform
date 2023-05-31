@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "@codeceptjs/configure": "^0.10.0",
-    "@types/node": "^20.2.3",
+    "@types/node": "^20.2.5",
     "codeceptjs": "^3.4.1",
     "dotenv-cli": "^7.2.1",
     "mocha": "^10.2.0",
