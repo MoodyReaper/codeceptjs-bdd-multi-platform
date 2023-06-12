@@ -2,7 +2,7 @@
 
 # Build stage
 
-FROM node:20.2.0-bullseye-slim@sha256:dc1906714d1993d291e1e7b5f236291236b0a0b6dfacdb164e4a9ea44d09c52e AS build
+FROM node:20.3.0-bullseye-slim@sha256:f52e0eb0f31863051b56d76d191b283c2b49ac084762eddfeb1afb54791b250b AS build
 RUN apt-get update && apt-get install -y --no-install-recommends dumb-init=1.2.5-1
 
 USER node
@@ -16,7 +16,7 @@ RUN npm ci
 
 # Final stage
 
-FROM node:20.2.0-bullseye-slim@sha256:dc1906714d1993d291e1e7b5f236291236b0a0b6dfacdb164e4a9ea44d09c52e
+FROM node:20.3.0-bullseye-slim@sha256:f52e0eb0f31863051b56d76d191b283c2b49ac084762eddfeb1afb54791b250b
 COPY --from=build /usr/bin/dumb-init /usr/bin/dumb-init
 
 USER node
