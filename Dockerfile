@@ -2,8 +2,8 @@
 
 # Build stage
 
-FROM node:20.3.0-bullseye-slim@sha256:f52e0eb0f31863051b56d76d191b283c2b49ac084762eddfeb1afb54791b250b AS build
-RUN apt-get update && apt-get install -y --no-install-recommends dumb-init=1.2.5-1
+FROM node:20.3-bookworm-slim@sha256:9d3d6a6ad1fb459efb295e77967ab9643e8fc3a3e3edc6ed4feec8793fa774c2 AS build
+RUN apt-get update && apt-get install -y --no-install-recommends dumb-init=1.2.5-2
 
 USER node
 RUN mkdir /home/node/codeceptjs-bdd-multi-platform && chown node:node /home/node/codeceptjs-bdd-multi-platform
@@ -16,7 +16,7 @@ RUN npm ci
 
 # Final stage
 
-FROM node:20.3.0-bullseye-slim@sha256:f52e0eb0f31863051b56d76d191b283c2b49ac084762eddfeb1afb54791b250b
+FROM node:20.3-bookworm-slim@sha256:9d3d6a6ad1fb459efb295e77967ab9643e8fc3a3e3edc6ed4feec8793fa774c2
 COPY --from=build /usr/bin/dumb-init /usr/bin/dumb-init
 
 USER node

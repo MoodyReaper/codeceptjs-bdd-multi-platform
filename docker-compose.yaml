@@ -19,7 +19,7 @@ services:
       - codeceptjs-bdd-multi-platform
   appium:
     container_name: codeceptjs-bdd-multi-platform-appium
-    image: appium/appium:v2.0.b57-p1c@sha256:deb3fa4f7c890cf8382daeb9bf014fcda86fa774311151e3732693fc10af8747
+    image: appium/appium:v2.0.b71-p0@sha256:b51d766afcf36ae131c49028d299a6016568efa85a581973cc410b8ff4713455
     networks:
       - codeceptjs-bdd-multi-platform
 
