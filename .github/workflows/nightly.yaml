@@ -47,6 +47,7 @@ jobs:
         with:
           check-mode: all
           # trunk-token: ${{ secrets.TRUNK_TOKEN }}
+          # arguments: --replace # TODO: remove later - https://features.trunk.io/check/p/uploads-should-not-error-out-if-results-have-already-been-uploaded
 
   run_tests:
     name: Run Tests
