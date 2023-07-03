@@ -90,7 +90,7 @@
     "@codeceptjs/ui": "^0.6.1",
     "@commitlint/config-conventional": "^17.6.6",
     "@trunkio/launcher": "^1.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
