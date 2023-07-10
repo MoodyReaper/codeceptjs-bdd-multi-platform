@@ -2,7 +2,7 @@
 
 # Build stage
 
-FROM node:20.3.1-bookworm-slim@sha256:37da5020e441357c1d0b5b9772f58efaa463dde0cc80a86dab0658eaffb4753e AS build
+FROM node:20.3.1-bookworm-slim@sha256:fe600ecd55fa23b90c716d03f05dfcb2c5cfa7ee01eefb1a76a03ba656f92953 AS build
 RUN apt-get update && apt-get install -y --no-install-recommends dumb-init=1.2.5-2
 
 USER node
@@ -16,7 +16,7 @@ RUN npm ci
 
 # Final stage
 
-FROM node:20.3.1-bookworm-slim@sha256:37da5020e441357c1d0b5b9772f58efaa463dde0cc80a86dab0658eaffb4753e
+FROM node:20.3.1-bookworm-slim@sha256:fe600ecd55fa23b90c716d03f05dfcb2c5cfa7ee01eefb1a76a03ba656f92953
 COPY --from=build /usr/bin/dumb-init /usr/bin/dumb-init
 
 USER node
