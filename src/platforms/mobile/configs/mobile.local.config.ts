@@ -27,6 +27,8 @@ if (process.env.TESTS_MOBILE_LOCAL_CAPABILITIES === undefined) {
 }
 
 const mobileLocalConfig = mobileLocalSchema.parse({
+  host: process.env.TESTS_MOBILE_LOCAL_HOST,
+  port: process.env.TESTS_MOBILE_LOCAL_PORT,
   app: process.env.TESTS_MOBILE_LOCAL_APP_PATH,
   platform: process.env.TESTS_MOBILE_LOCAL_PLATFORM,
   device: process.env.TESTS_MOBILE_LOCAL_DEVICE,

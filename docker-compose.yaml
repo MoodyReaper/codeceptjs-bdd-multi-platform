@@ -1,15 +1,13 @@
-# TODO: check and finish
-
 version: '3.9'
 
 name: codeceptjs-bdd-multi-platform
 
 services:
   tests:
-    # command: npm run test
+    # command: # TODO: wait for emulated device, then start tests
     container_name: codeceptjs-bdd-multi-platform-tests
     depends_on:
-      - appium
+      - appium-android
     env_file:
       - .env
     build:
@@ -17,12 +15,29 @@ services:
       dockerfile: ./Dockerfile
     networks:
       - codeceptjs-bdd-multi-platform
-  appium:
-    container_name: codeceptjs-bdd-multi-platform-appium
-    image: appium/appium:v2.0.b71-p0@sha256:b51d766afcf36ae131c49028d299a6016568efa85a581973cc410b8ff4713455
+    security_opt:
+      - no-new-privileges:true
+
+  # Emulated device does not start at the moment
+  # TODO: check after fixing https://github.com/budtmo/docker-android/issues/365
+  appium-android:
+    container_name: codeceptjs-bdd-multi-platform-appium-android
+    devices:
+      - /dev/kvm
+    environment:
+      - APPIUM=true
+      - WEB_VNC=true
+      - EMULATOR_DEVICE=Samsung Galaxy S10
+    expose:
+      - 4723
+      - 6080
+    image: budtmo/docker-android:emulator_11.0@sha256:50c0d9c0d8baaa03d7101c1aa3394e292cfa7ca5b0f11da788262245621bf66d
     networks:
       - codeceptjs-bdd-multi-platform
+    security_opt:
+      - no-new-privileges:true
 
 networks:
   codeceptjs-bdd-multi-platform:
     driver: bridge
+    name: codeceptjs-bdd-multi-platform

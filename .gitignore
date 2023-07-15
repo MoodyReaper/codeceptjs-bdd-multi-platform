@@ -1,7 +1,5 @@
 # https://git-scm.com/docs/gitignore
 
-### SHARED BETWEEN .gitignore, .dockerignore ###
-
 ## TEMPLATE ##
 
 # Tests, analytics, reports

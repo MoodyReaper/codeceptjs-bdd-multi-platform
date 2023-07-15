@@ -2,6 +2,7 @@ Appium
 Autotests
 azuretools
 BrowserStack
+budtmo
 Buildx
 Codecept
 CodeceptJS
@@ -21,6 +22,7 @@ MochAwesome
 npmrc
 nvmrc
 oderwat
+openapi
 pomdtr
 randomsequenceofsymbols
 runtimes

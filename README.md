@@ -10,8 +10,8 @@ CodeceptJS opinionated setup with BDD tests for multiple platforms:
 4. CI (GitHub Actions)
 5. Static code analysis: formatting and linting
 6. Separate configuration and tests launch for:
-   - Web _(via `Playwright`)_
-   - Mobile _(via `WebDriver` + `Appium`)_:
+   - Web (via `Playwright`)
+   - Mobile (via `WebDriver` + `Appium`):
      - BrowserStack device farm for remote `Appium` server
    - Backend
    - Infrastructure
@@ -23,7 +23,7 @@ CodeceptJS opinionated setup with BDD tests for multiple platforms:
 3. Set environment variables _(read below)_
 4. Launch:
    - With `Docker Compose`:
-     - `docker-compose up` _(**TODO** - not finished at the moment)_
+     - `docker-compose up`
    - Without `Docker Compose`:
      - Switch to required `NodeJS` version:
        - `nvm install` _(if not installed)_
@@ -127,9 +127,11 @@ Not implemented at the moment: **(TODO)**
 
 | ENV variable                      | Required? | Default state  | Example value           | Description                                                        |
 | :-------------------------------- | :-------- | :------------- | :---------------------- | :----------------------------------------------------------------- |
+| `TESTS_MOBILE_LOCAL_HOST`         | -         | `localhost`    | `docker-container-name` | Appium Host                                                        |
+| `TESTS_MOBILE_LOCAL_PORT`         | -         | `4723`         | `1337`                  | Appium Port                                                        |
 | `TESTS_MOBILE_LOCAL_APP_PATH`     | +         | -              | `app-example-1.0.0.apk` | Path to app file (including filename)                              |
 | `TESTS_MOBILE_LOCAL_PLATFORM`     | +         | -              | `Android` or `iOS`      | Platform (OS)                                                      |
-| `TESTS_MOBILE_LOCAL_DEVICE`       | +         | -              | `Google Pixel 7`        | Device                                                             |
+| `TESTS_MOBILE_LOCAL_DEVICE`       | +         | -              | `Samsung Galaxy S10`    | Device                                                             |
 | `TESTS_MOBILE_LOCAL_CAPABILITIES` | -         | _Check config_ | -                       | [Read here](https://appium.io/docs/en/writing-running-appium/caps) |
 
 ### Mobile (remote launch via BrowserStack)
@@ -142,7 +144,7 @@ Not implemented at the moment: **(TODO)**
 | `TESTS_MOBILE_BROWSERSTACK_PORT`         | -         | `4444`                       | `1337`                         | BrowserStack Port                                               |
 | `TESTS_MOBILE_BROWSERSTACK_APP_URL`      | +         | -                            | `bs://randomsequenceofsymbols` | BrowserStack URL for uploaded app                               |
 | `TESTS_MOBILE_BROWSERSTACK_PLATFORM`     | +         | -                            | `Android` or `iOS`             | BrowserStack platform (OS)                                      |
-| `TESTS_MOBILE_BROWSERSTACK_DEVICE`       | +         | -                            | `Google Pixel 7`               | BrowserStack device                                             |
+| `TESTS_MOBILE_BROWSERSTACK_DEVICE`       | +         | -                            | `Samsung Galaxy S10`           | BrowserStack device                                             |
 | `TESTS_MOBILE_BROWSERSTACK_CAPABILITIES` | -         | _Check config_               | -                              | [Read here](https://browserstack.com/app-automate/capabilities) |
 
 ### WEB (common)
@@ -238,13 +240,12 @@ Note: builds are not used at the moment
 0. Check local `Appium` environment with `Appium Doctor`
    ([verifying the installation](https://appium.io/docs/en/about-appium/getting-started/#verifying-the-installation))
 1. Launch local `Appium` server:
-   - Docker Compose - `docker-compose up` (note: **TODO** - not finished at the moment, works only
-     for Android)
+   - Docker Compose - `docker-compose up` (note: works only for Android)
    - Standalone (GUI) - `Appium Desktop`
      ([download here](https://github.com/appium/appium-desktop/releases))
 2. Launch a device emulator:
    - Android:
-     - Docker Compose - `docker-compose up` (note: **TODO** - not finished at the moment)
+     - Docker Compose - `docker-compose up` (note: works only for Android)
      - Using`Android Studio`
    - iOS:
      - **TODO**
@@ -258,13 +259,12 @@ Note: builds are not used at the moment
 0. Check local `Appium` environment with `Appium Doctor`
    ([verifying the installation](https://appium.io/docs/en/about-appium/getting-started/#verifying-the-installation))
 1. Launch local `Appium` server:
-   - Docker Compose - `docker-compose up` (note: **TODO** - not finished at the moment, works only
-     for Android)
+   - Docker Compose - `docker-compose up` (note: works only for Android)
    - Standalone (GUI) - `Appium Desktop`
      ([download here](https://github.com/appium/appium-desktop/releases))
 2. Launch a device emulator:
    - Android:
-     - Docker Compose - `docker-compose up` (note: **TODO** - not finished at the moment)
+     - Docker Compose - `docker-compose up` (note: works only for Android)
      - Using`Android Studio`
    - iOS:
      - **TODO**
@@ -275,7 +275,7 @@ Note: builds are not used at the moment
    {
      "platformName": "Android",
      "appium:platformVersion": "12",
-     "appium:deviceName": "Google Pixel 7",
+     "appium:deviceName": "Samsung Galaxy S10",
      "appium:automationName": "UiAutomator2",
      "appium:app": "app-example-1.0.0.apk",
      "appium:appPackage": "com.package.android.example"
@@ -292,7 +292,7 @@ Note: builds are not used at the moment
    {
      "platformName": "Android",
      "appium:platformVersion": "12",
-     "appium:deviceName": "Google Pixel 7",
+     "appium:deviceName": "Samsung Galaxy S10",
      "appium:automationName": "UiAutomator2",
      "appium:app": "bs://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
      "appium:appPackage": "com.package.android.example"
@@ -310,9 +310,6 @@ Use `pause()` function in tests ([read here](https://codecept.io/basics/#pause))
 - Add code coverage reporting
 - Add visual regression testing
 - Add performance testing
-- Add schema validation for API tests (`swagger-typescript-api`)
-- Add `Appium` server via Docker ([reference](https://github.com/appium/appium-docker-android))
-- Add emulated devices via Docker ([reference](https://github.com/budtmo/docker-android))
+- Add schema validation for API tests (`swagger-typescript-api` or `openapi-client-axios`)
 - Add parallel tests execution (`run-workers`, `run-multiple`)
-- Complete `Dockerfile` and `Docker Compose` configs
 - Make common configuration and merge platform-specific sub-configs
