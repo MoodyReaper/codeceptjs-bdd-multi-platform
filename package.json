@@ -89,7 +89,7 @@
   "devDependencies": {
     "@codeceptjs/ui": "^0.6.1",
     "@trunkio/launcher": "^1.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
