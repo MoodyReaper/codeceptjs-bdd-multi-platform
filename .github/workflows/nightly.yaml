@@ -13,7 +13,7 @@ on:
     #       │ │ │ │ │
     #       │ │ │ │ │
     #       * * * * *
-    - cron: 0 0 1 * *
+    - cron: 0 0 1 * * # Example: change to `0 0 * * 1-5` in order to run every working day
   workflow_dispatch: {}
 
 permissions: {}
@@ -73,3 +73,10 @@ jobs:
       #   run: npm run test:mobile
       - name: Run web tests
         run: npm run test:web
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        if: always()
+        with:
+          name: test-reports
+          path: reports/
+          retention-days: 30

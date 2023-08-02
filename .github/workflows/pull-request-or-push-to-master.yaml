@@ -92,3 +92,10 @@ jobs:
       #   run: npm run test:mobile
       - name: Run web tests
         run: npm run test:web
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        if: always()
+        with:
+          name: test-reports
+          path: reports/
+          retention-days: 30
