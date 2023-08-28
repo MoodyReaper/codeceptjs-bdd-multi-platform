@@ -18,7 +18,7 @@ const finishPerformanceMeasure = (id: string, reportThresholdMs?: number): void 
         typeof reportThresholdMs === 'number'
           ? ` (threshold ${reportThresholdMs.toString()}ms)`
           : ''
-      }`
+      }`,
     );
   }
   // eslint-disable-next-line @typescript-eslint/no-dynamic-delete

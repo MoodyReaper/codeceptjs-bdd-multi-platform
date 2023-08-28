@@ -20,7 +20,7 @@ if (process.env.TESTS_MOBILE_LOCAL_CAPABILITIES === undefined) {
   }
 } else {
   const parsedLocalDesiredCapabilities: unknown = JSON.parse(
-    process.env.TESTS_MOBILE_LOCAL_CAPABILITIES.replaceAll('\\', '')
+    process.env.TESTS_MOBILE_LOCAL_CAPABILITIES.replaceAll('\\', ''),
   );
   must(typeof parsedLocalDesiredCapabilities === 'string');
   localDesiredCapabilities = parsedLocalDesiredCapabilities;

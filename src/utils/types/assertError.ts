@@ -4,8 +4,8 @@ export default function assertError(errorCandidate: unknown): asserts errorCandi
   if (!(errorCandidate instanceof Error)) {
     throw Error(
       `Assertion failed: errorCandidate is not an Error. Content: ${safeJSONStringify(
-        errorCandidate
-      )}`
+        errorCandidate,
+      )}`,
     );
   }
 }

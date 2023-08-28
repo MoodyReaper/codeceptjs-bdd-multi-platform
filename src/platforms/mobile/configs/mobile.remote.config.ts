@@ -20,7 +20,7 @@ if (process.env.TESTS_MOBILE_BROWSERSTACK_CAPABILITIES === undefined) {
   }
 } else {
   const parsedRemoteDesiredCapabilities: unknown = JSON.parse(
-    process.env.TESTS_MOBILE_BROWSERSTACK_CAPABILITIES.replaceAll('\\', '')
+    process.env.TESTS_MOBILE_BROWSERSTACK_CAPABILITIES.replaceAll('\\', ''),
   );
   must(typeof parsedRemoteDesiredCapabilities === 'string');
   remoteDesiredCapabilities = parsedRemoteDesiredCapabilities;

@@ -2,7 +2,7 @@ const prefix = 'Invariant failed';
 
 export default function must(
   condition: unknown,
-  message?: string | (() => string)
+  message?: string | (() => string),
 ): asserts condition {
   if (condition !== undefined) return;
   const provided = typeof message === 'function' ? message() : message;

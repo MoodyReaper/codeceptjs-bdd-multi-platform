@@ -16,7 +16,7 @@ export default async function execLocalTerminalCommand(command: string): Promise
   Error:
     ${JSON.stringify(error)}
   Stderr:
-    ${stderr.toString()}`
+    ${stderr.toString()}`,
         );
         reject(error);
         return;

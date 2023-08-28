@@ -3,7 +3,7 @@ import path from 'path';
 
 export default async function findFilesByExtension(
   dir: string,
-  fileExtension: string
+  fileExtension: string,
 ): Promise<string[]> {
   const matchedFiles = [];
   const files = await readdir(dir);
