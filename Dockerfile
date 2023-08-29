@@ -1,6 +1,6 @@
 # Base stage
 
-FROM node:20.3.1-bookworm-slim@sha256:37da5020e441357c1d0b5b9772f58efaa463dde0cc80a86dab0658eaffb4753e AS base
+FROM node:20.5.1-bookworm-slim@sha256:75404fc5825f24222276501c09944a5bee8ed04517dede5a9934f1654ca84caf AS base
 
 # Install Playwright browsers and system dependencies
 # TODO: check later - "ERROR: Playwright does not support firefox on debian12"
