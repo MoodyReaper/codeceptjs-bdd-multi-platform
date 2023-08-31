@@ -16,6 +16,9 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: node
+        versions: ['>20.3.1']
 
   # Maintain dependencies for npm
   - package-ecosystem: npm
@@ -24,5 +27,9 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    groups:
+      eslint:
+        patterns:
+          - '*eslint*'
     ignore:
       - dependency-name: '@types/node'
