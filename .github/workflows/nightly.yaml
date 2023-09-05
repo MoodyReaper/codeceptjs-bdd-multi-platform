@@ -31,6 +31,7 @@ jobs:
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
         with:
           node-version: 20.3.1
+          cache: npm
       - name: Install package dependencies
         run: npm ci
       - name: Generate types
@@ -61,6 +62,7 @@ jobs:
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
         with:
           node-version: 20.3.1
+          cache: npm
       - name: Install package dependencies
         run: npm ci --production
       # - name: Run all tests
