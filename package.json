@@ -87,7 +87,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@codeceptjs/ui": "^0.6.1",
+    "@codeceptjs/ui": "^0.7.0",
     "@trunkio/launcher": "^1.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
