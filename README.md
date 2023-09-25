@@ -33,12 +33,12 @@ CodeceptJS opinionated setup with BDD tests for multiple platforms:
 
 ## Development / System dependencies
 
-| System dependency                                 | Minimum version | Description             |
-| :------------------------------------------------ | :-------------- | :---------------------- |
-| [Docker Compose](https://docs.docker.com/compose) | `2.x+`          | Container orchestration |
-| [Docker Engine](https://docs.docker.com/engine)   | `20.x+`         | Container technology    |
-| [Node.js](https://nodejs.org)                     | `20.x+`         | `JS` runtime            |
-| [nvm](https://github.com/nvm-sh/nvm)              | `2.x+`          | Node Version Manager    |
+| System dependency                                 | Required version | Description             |
+| :------------------------------------------------ | :--------------- | :---------------------- |
+| [Docker Compose](https://docs.docker.com/compose) | `2.x`            | Container orchestration |
+| [Docker Engine](https://docs.docker.com/engine)   | `20.x`           | Container technology    |
+| [Node.js](https://nodejs.org)                     | `20.7.0`         | `JS` runtime            |
+| [nvm](https://github.com/nvm-sh/nvm)              | `2.x`            | Node Version Manager    |
 
 ### Mobile
 
@@ -48,10 +48,10 @@ Autotests can be launched locally or remotely via `Appium`
 
 - Android requires installation of the following dependencies:
 
-  | System dependency                                                                    | Minimum version | Description                                                       |
-  | :----------------------------------------------------------------------------------- | :-------------- | :---------------------------------------------------------------- |
-  | [Java](https://oracle.com/java/technologies/downloads)                               | `8+`            | Java runtime, `JDK` _(`openjdk` can be used)_                     |
-  | [Android SDK Build Tools](https://developer.android.com/studio/releases/build-tools) | `24+`           | `Android SDK` _(recommended to be installed by `Android Studio`)_ |
+  | System dependency                                                                    | Required version | Description                                                       |
+  | :----------------------------------------------------------------------------------- | :--------------- | :---------------------------------------------------------------- |
+  | [Java](https://oracle.com/java/technologies/downloads)                               | `8.x`            | Java runtime, `JDK` _(`openjdk` can be used)_                     |
+  | [Android SDK Build Tools](https://developer.android.com/studio/releases/build-tools) | `24.x`           | `Android SDK` _(recommended to be installed by `Android Studio`)_ |
 
   Additional info (Android):
   [driver setup](https://appium.io/docs/en/drivers/android-uiautomator2/index.html),

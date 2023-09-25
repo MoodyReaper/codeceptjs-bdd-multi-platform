@@ -20,6 +20,7 @@ services:
 
   # Emulated device does not start at the moment
   # TODO: check after fixing https://github.com/budtmo/docker-android/issues/365
+  # trunk-ignore(semgrep/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service)
   appium-android:
     container_name: codeceptjs-bdd-multi-platform-appium-android
     devices:
@@ -31,7 +32,7 @@ services:
     expose:
       - 4723
       - 6080
-    image: budtmo/docker-android:emulator_11.0@sha256:50c0d9c0d8baaa03d7101c1aa3394e292cfa7ca5b0f11da788262245621bf66d
+    image: budtmo/docker-android:emulator_11.0@sha256:aa759c57b079813de4ea834d301da31711fb3a49d7211ebf668fc86b0decbf62
     networks:
       - codeceptjs-bdd-multi-platform
     security_opt:

@@ -1,6 +1,6 @@
 # Base stage
 
-FROM node:20.3.1-bookworm-slim@sha256:37da5020e441357c1d0b5b9772f58efaa463dde0cc80a86dab0658eaffb4753e AS base
+FROM node:20.7.0-bookworm-slim@sha256:3dc033a47194a92c07bc8e1b5257fc3990f75b8099b0cc0299fcad33004b2ca1 AS base
 
 # Install Playwright browsers and system dependencies
 # TODO: check later - "ERROR: Playwright does not support firefox on debian12"
@@ -15,6 +15,7 @@ WORKDIR /home/node/codeceptjs-bdd-multi-platform
 
 # Deps stage
 
+# trunk-ignore(terrascan/AC_DOCKER_0041)
 FROM base AS deps
 
 COPY package.json package-lock.json ./
@@ -22,10 +23,13 @@ RUN npm ci
 
 # Production stage
 
+# trunk-ignore(terrascan/AC_DOCKER_0041)
 FROM deps AS production
 
 ENV NODE_ENV=production
 
 COPY --chown=node:node . .
+
+HEALTHCHECK NONE
 
 CMD ["/bin/bash", "-c", "npm run test"]

@@ -27,6 +27,8 @@ pomdtr
 randomsequenceofsymbols
 runtimes
 scrollback
+semgrep
+terrascan
 TrunkIO
 tsbuildinfo
 UiAutomator2
