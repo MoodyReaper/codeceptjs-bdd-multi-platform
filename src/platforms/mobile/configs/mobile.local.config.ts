@@ -11,27 +11,27 @@ const defaultLocalDesiredCapabilitiesIOS = {
 
 let localDesiredCapabilities;
 
-if (process.env.TESTS_MOBILE_LOCAL_CAPABILITIES === undefined) {
-  if (process.env.TESTS_MOBILE_LOCAL_PLATFORM === 'Android') {
+if (process.env['TESTS_MOBILE_LOCAL_CAPABILITIES'] === undefined) {
+  if (process.env['TESTS_MOBILE_LOCAL_PLATFORM'] === 'Android') {
     localDesiredCapabilities = defaultLocalDesiredCapabilitiesAndroid;
   }
-  if (process.env.TESTS_MOBILE_LOCAL_PLATFORM === 'iOS') {
+  if (process.env['TESTS_MOBILE_LOCAL_PLATFORM'] === 'iOS') {
     localDesiredCapabilities = defaultLocalDesiredCapabilitiesIOS;
   }
 } else {
   const parsedLocalDesiredCapabilities: unknown = JSON.parse(
-    process.env.TESTS_MOBILE_LOCAL_CAPABILITIES.replaceAll('\\', ''),
+    process.env['TESTS_MOBILE_LOCAL_CAPABILITIES'].replaceAll('\\', ''),
   );
   must(typeof parsedLocalDesiredCapabilities === 'string');
   localDesiredCapabilities = parsedLocalDesiredCapabilities;
 }
 
 const mobileLocalConfig = mobileLocalSchema.parse({
-  host: process.env.TESTS_MOBILE_LOCAL_HOST,
-  port: process.env.TESTS_MOBILE_LOCAL_PORT,
-  app: process.env.TESTS_MOBILE_LOCAL_APP_PATH,
-  platform: process.env.TESTS_MOBILE_LOCAL_PLATFORM,
-  device: process.env.TESTS_MOBILE_LOCAL_DEVICE,
+  host: process.env['TESTS_MOBILE_LOCAL_HOST'],
+  port: process.env['TESTS_MOBILE_LOCAL_PORT'],
+  app: process.env['TESTS_MOBILE_LOCAL_APP_PATH'],
+  platform: process.env['TESTS_MOBILE_LOCAL_PLATFORM'],
+  device: process.env['TESTS_MOBILE_LOCAL_DEVICE'],
   desiredCapabilities: localDesiredCapabilities,
 });
 
