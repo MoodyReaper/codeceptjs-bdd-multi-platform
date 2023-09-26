@@ -23,7 +23,7 @@ CodeceptJS opinionated setup with BDD tests for multiple platforms:
 3. Set environment variables _(read below)_
 4. Launch:
    - With `Docker Compose`:
-     - `docker-compose up`
+     - `docker-compose --profile build up`
    - Without `Docker Compose`:
      - Switch to required `NodeJS` version:
        - `nvm install` _(if not installed)_

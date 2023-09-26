@@ -4,6 +4,8 @@ name: codeceptjs-bdd-multi-platform
 
 services:
   tests:
+    profiles:
+      - build
     # command: # TODO: wait for emulated device, then start tests
     container_name: codeceptjs-bdd-multi-platform-tests
     depends_on:
