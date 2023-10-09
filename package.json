@@ -83,7 +83,7 @@
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
-    "webdriverio": "^8.16.12",
+    "webdriverio": "^8.16.22",
     "zod": "^3.22.2"
   },
   "devDependencies": {
