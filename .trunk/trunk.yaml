@@ -1,22 +1,22 @@
 version: 0.1
 cli:
-  version: 1.16.0
+  version: 1.17.2
   sha256:
-    darwin_arm64: f51110e86b862631253f1a3cdbc159f8db7a558ca849b10e4164f235d18631e1
-    darwin_x86_64: 2dcd055c9b64698ce6733fd8632792c61d634e81207889b92f849fa6a1392659
-    linux_x86_64: 0cbc41d30b09cdbbcbe1971f81a743b441ad8f225494430c43ab072a5638d77a
+    darwin_arm64: 5de2f7d68e8941d268d85b337859bac0ad890a76535b9c972acdf99b708aeff8
+    darwin_x86_64: b2d65d906a4c946e2b87d11c62d306fe7899ccfae31bb78429b328da000b4cb0
+    linux_x86_64: b192cf635142b8f043f435012c69e4e95989d5420bdbe66e3caad74cf2be6636
 plugins:
   sources:
     - id: trunk
-      ref: v1.2.3
+      ref: v1.2.6
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
     # Code - multi-language
-    - semgrep@1.41.0
+    - semgrep@1.48.0
     # Code - TypeScript
-    - eslint@8.50.0
-    - sort-package-json@2.5.1
+    - eslint@8.53.0
+    - sort-package-json@2.6.0
     # File - Dockerfile
     - hadolint@2.12.0
     # File - ENV
@@ -24,7 +24,7 @@ lint:
     # File - Markdown
     - markdownlint@0.37.0
     # File - YAML
-    - yamllint@1.32.0
+    - yamllint@1.33.0
     # Formatting
     - prettier@3.0.3
     # Git
@@ -32,17 +32,17 @@ lint:
     # GitHub Actions
     - actionlint@1.6.26
     # Security - dependencies
-    - osv-scanner@1.4.0
+    - osv-scanner@1.4.3
     # Security - general
-    - checkov@2.4.9
-    - trivy@0.45.1
+    - checkov@3.0.32
+    - trivy@0.47.0
     # Security - IaC
     - terrascan@1.18.3
     # Security - secrets
     - gitleaks@8.18.0
-    - trufflehog@3.57.0
+    - trufflehog@3.62.1
     # Spell check
-    - cspell@7.3.6
+    - cspell@8.0.0
 runtimes:
   enabled:
     - go@1.21.1
