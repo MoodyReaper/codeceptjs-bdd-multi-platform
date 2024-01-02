@@ -34,7 +34,7 @@ lint:
     # Security - dependencies
     - osv-scanner@1.5.0
     # Security - general
-    - checkov@3.1.46
+    - checkov@3.1.50
     - trivy@0.48.1
     # Security - IaC
     - terrascan@1.18.11
@@ -42,12 +42,12 @@ lint:
     - gitleaks@8.18.1
     - trufflehog@3.63.7
     # Spell check
-    - cspell@8.2.4
+    - cspell@8.3.1
 runtimes:
   enabled:
-    - go@1.21.1
-    - node@20.7.0
-    - python@3.11.1 # TODO: upgrade to 3.11.5 when available
+    - go@1.21.5
+    - node@20.10.0
+    - python@3.11.1 # TODO: upgrade to 3.12.1 when available
 actions:
   enabled:
     - trunk-announce
