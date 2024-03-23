@@ -51,7 +51,8 @@
 **/.cspell*
 
 # ENV
-**/.env*
+**/.env
+**/.*.env
 
 # Docker
 **/.dockerignore

@@ -37,7 +37,7 @@ CodeceptJS opinionated setup with BDD tests for multiple platforms:
 | :------------------------------------------------ | :--------------- | :---------------------- |
 | [Docker Compose](https://docs.docker.com/compose) | `2.x`            | Container orchestration |
 | [Docker Engine](https://docs.docker.com/engine)   | `20.x`           | Container technology    |
-| [Node.js](https://nodejs.org)                     | `20.10.0`        | `JS` runtime            |
+| [Node.js](https://nodejs.org)                     | `20.11.1`        | `JS` runtime            |
 | [nvm](https://github.com/nvm-sh/nvm)              | `2.x`            | Node Version Manager    |
 
 ### Mobile

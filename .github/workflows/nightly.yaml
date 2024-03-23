@@ -31,7 +31,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
         with:
-          node-version: 20.10.0
+          node-version: 20.11.1
           cache: npm
       - name: Install package dependencies
         run: npm ci
@@ -63,7 +63,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
         with:
-          node-version: 20.10.0
+          node-version: 20.11.1
           cache: npm
       - name: Install package dependencies
         run: npm ci --production

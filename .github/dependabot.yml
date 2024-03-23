@@ -22,7 +22,7 @@ updates:
     open-pull-requests-limit: 10
     ignore:
       - dependency-name: node
-        versions: ['>20.10']
+        versions: ['>20.11']
 
   # Maintain dependencies for npm
   - package-ecosystem: npm
@@ -37,4 +37,4 @@ updates:
           - '*eslint*'
     ignore:
       - dependency-name: '@types/node'
-        versions: ['>20.10']
+        versions: ['>20.11']

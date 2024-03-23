@@ -34,7 +34,7 @@ services:
     expose:
       - 4723
       - 6080
-    image: budtmo/docker-android:emulator_11.0@sha256:cb0bfc56b1ed811e530f8e44681cc473533a417dccd47dd97eaff2e7990f0ba8
+    image: budtmo/docker-android:emulator_11.0@sha256:3f53a6ddb45625920517dce261d5650d51b74d288d395ca796020db9043c88f0
     networks:
       - codeceptjs-bdd-multi-platform
     security_opt:

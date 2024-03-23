@@ -38,10 +38,10 @@ export const config: CodeceptJS.MainConfig = {
       uniqueScreenshotNames: 'true',
     },
     GraphQL: {
-      endpoint: `${apiConfig.graphqlBaseUrl}`,
+      endpoint: apiConfig.graphqlBaseUrl,
     },
     REST: {
-      endpoint: `${apiConfig.restBaseUrl}`,
+      endpoint: apiConfig.restBaseUrl,
     },
     JSONResponse: {
       requestHelper: 'GraphQL',
