@@ -74,7 +74,7 @@
   "dependencies": {
     "@codeceptjs/configure": "^1.0.1",
     "@types/node": "^20.11.30",
-    "codeceptjs": "^3.5.14",
+    "codeceptjs": "^4.2.0",
     "dotenv-cli": "^7.4.1",
     "mocha": "^10.4.0",
     "mocha-multi": "^1.1.7",
