@@ -45,7 +45,7 @@ jobs:
           TESTS_MOBILE_LOCAL_PLATFORM: ${{ vars.TESTS_MOBILE_LOCAL_PLATFORM }}
           TESTS_MOBILE_LOCAL_DEVICE: ${{ vars.TESTS_MOBILE_LOCAL_DEVICE }}
       - name: Trunk Check
-        uses: trunk-io/trunk-action@f6c5f1b90503c30e02059667dbc247f2257b63c5 # v1.1.15
+        uses: trunk-io/trunk-action@e1234e67a86010d61ddac8d8ebf4b783e2ffd2fa # v2.0.0
         with:
           check-mode: all
           # trunk-token: ${{ secrets.TRUNK_TOKEN }}
